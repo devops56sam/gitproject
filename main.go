@@ -1,8 +1,3 @@
+package main
 
-
-
-
-D
-B
-
-func n[] {}
+func main() {}
