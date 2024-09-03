@@ -1,3 +1,3 @@
 # gitproject
-git project to practise on ANDROMEDA
-learning git on ANDROMEDA
+git project to Automate auto-commit to Gitlab
+
