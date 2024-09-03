@@ -1,0 +1,29 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+
+  commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Commit changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions Bot"
+        git add .
+        git commit -m "Automated commit at $(date)" || exit 0
+        git push
+        
+    - name: Push to GitLab  
+      env:
+        GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
+        GITLAB_PROJECT_URL: ${{ secrets.GITLAB_PROJECT_URL }}
+      run: |
+        git remote add gitlab $GITLAB_PROJECT_URL
+        git push gitlab HEAD:main
