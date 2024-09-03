@@ -14,11 +14,12 @@ jobs:
     
     - name: Commit changes
       run: |
-        git config --local user.email "git@gitlab.com:isameer3056/repository.git"
+        git config --local user.email "isameer3056@gmail.com"
         git config --local user.name "isameer3056"
+        git fetch git@gitlab.com:isameer3056/repository.git
         git add .
         git commit -m "Automated commit at $(date)" || exit 0
-        git push
+        git push git@gitlab.com:isameer3056/repository.git
         
     - name: Push to GitLab  
       env:
