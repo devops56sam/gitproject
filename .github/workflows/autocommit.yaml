@@ -14,8 +14,8 @@ jobs:
     
     - name: Commit changes
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "GitHub Actions Bot"
+        git config --local user.email "git@gitlab.com:isameer3056/repository.git"
+        git config --local user.name "isameer3056"
         git add .
         git commit -m "Automated commit at $(date)" || exit 0
         git push
