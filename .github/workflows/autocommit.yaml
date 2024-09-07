@@ -26,4 +26,4 @@ jobs:
         GITLAB_PROJECT_URL: ${{ secrets.GITLAB_PROJECT_URL }}
       run: |
         git remote add gitlab $GITLAB_PROJECT_URL
-        git push gitlab HEAD:main
+        git push gitlab $GITLAB_PROJECT_URL main 
