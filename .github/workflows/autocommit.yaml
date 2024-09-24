@@ -1,12 +1,12 @@
 name: Auto Commit
 
-on:
-  schedule:
-    - cron: '0 * * * *'
+#on:
+  #schedule:
+   # - cron: '0 * * * *'
 
 jobs:
 
-  commit:
+ commit:
     runs-on: ubuntu-latest
     
     steps:
